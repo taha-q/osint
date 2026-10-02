@@ -16,8 +16,8 @@ async def check_email(email: str) -> None:
     """Check if an email is valid."""
     async with EmailChecker() as checker:
         is_valid = await checker.is_valid_email(email)
-        status = "✓ Valid" if is_valid else "✗ Invalid"
-        print(f"{email}: {status}")
+        status = "Valid" if is_valid else "Invalid"
+        print(f"+ {email}: {status}")
 
 
 async def search_username(username: str, timeout: float = 5.0) -> None:
@@ -27,7 +27,7 @@ async def search_username(username: str, timeout: float = 5.0) -> None:
         if matches:
             print(f"\nFound {username} on:")
             for url in matches:
-                print(f"  • {url}")
+                print(f"+ {url}")
         else:
             print(f"No matches found for {username}")
 

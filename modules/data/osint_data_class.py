@@ -1,5 +1,5 @@
 class OsintDataClass:
-    username_search_websites: list[dict] = [
+    username_search_websites:list[dict] = [
     {"name": "github", "url": "https://github.com/{}"},
     {"name": "twitter", "url": "https://x.com/{}"},
     {"name": "instagram", "url": "https://instagram.com/{}"},

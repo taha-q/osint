@@ -1,6 +1,7 @@
 import aiohttp
-from data.osint_data_class import OsintDataClass
-from data.request_helper import RequestHelper
+import asyncio
+from .data.osint_data_class import OsintDataClass
+from .data.request_helper import RequestHelper
 
 class UsernameSearcher:
     def __init__(self):
@@ -17,6 +18,8 @@ class UsernameSearcher:
         :param timeout:  time before closing the connection
         :rtype: None
         """
+        print(f"+ loaded {len(self.websites)} websites")
+
         try:
             for site_info in self.websites:
                 name = site_info["name"]
